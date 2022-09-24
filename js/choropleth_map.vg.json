@@ -15,6 +15,24 @@
       "encoding": {"tooltip": {"field": "note"}}
     },
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format":{
+          "type": "topojson", "feature": "oceans"
+        }
+      },
+      "mark":{"type": "geoshape", "fill":"skyblue"}
+    },
+    {
+      "data":{
+        "url": "https://raw.githubusercontent.com/Etan01/DataVis_Week9/main/js/ne_110m.json",
+        "format":{
+          "type":"topojson", "feature": "ne_110m_graticules_30"
+          }
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
       "transform": [
         {
           "lookup": "properties.NAME",
@@ -27,7 +45,8 @@
           }
         },
         {
-          "calculate": "datum.total_electricity/datum.population * 10000", "as": "Electricity Comsumption per 10,000 population"
+          "calculate": "datum.total_electricity/datum.population * 10000",
+          "as": "Electricity Comsumption per 10,000 population"
         }
       ],
       "mark": {"type": "geoshape"},
@@ -54,7 +73,6 @@
             "type": "quantitative",
             "title": "Average Population"
           }
-
         ]
       }
     }
